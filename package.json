@@ -1,0 +1,30 @@
+{
+  "name": "race_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KauanAmorim/race_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KauanAmorim/race_generator/issues"
+  },
+  "homepage": "https://github.com/KauanAmorim/race_generator#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "sequelize": "^6.23.2",
+    "sequelize-cli": "^6.5.1",
+    "sqlite3": "^5.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
