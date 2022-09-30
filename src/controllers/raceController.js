@@ -24,7 +24,6 @@ class raceController {
     static async createRace(req, res) {
         try {
             const data = req.body
-            data.ativo = 1
             const race = await Race.create(data)
             res.status(201).send(race);            
         } catch (err) {
