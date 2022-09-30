@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start:watch": "nodemon src/index.js",
+    "reset-test-db": "sequelize-cli db:migrate:undo:all --env test && sequelize-cli db:migrate --env test",
+    "prepare-test-db": "npm run reset-test-db",
+    "test-server": "export NODE_ENV=test && npm run start:watch",
+    "test": "jest *.unit.spec.js",
+    "test:watch": "jest *.it.spec.js --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +29,8 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
+    "axios": "^0.27.2",
+    "jest": "^29.1.1",
     "nodemon": "^2.0.20"
   }
 }

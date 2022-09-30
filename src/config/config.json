@@ -1,20 +1,14 @@
 {
   "development": {
     "dialect": "sqlite",
-    "host": "./dev.sqlite"
+    "host": "./src/database/dev.sqlite"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "host": "./src/database/test.sqlite"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "host": "./src/database/prod.sqlite"
   }
 }
