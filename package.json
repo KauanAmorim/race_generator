@@ -8,8 +8,8 @@
     "reset-test-db": "sequelize-cli db:migrate:undo:all --env test && sequelize-cli db:migrate --env test",
     "prepare-test-db": "npm run reset-test-db",
     "test-server": "export NODE_ENV=test && npm run start:watch",
-    "test": "jest *.unit.spec.js",
-    "test:watch": "jest *.it.spec.js --watch"
+    "test": "jest *.unit.spec.js --watch",
+    "test:watch": "jest race.it.spec.js --watch"
   },
   "repository": {
     "type": "git",

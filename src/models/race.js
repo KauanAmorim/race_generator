@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Race.init({
     cep_inicial: DataTypes.STRING,
     cep_final: DataTypes.STRING,
-    price: DataTypes.STRING
+    preco: DataTypes.DECIMAL,
+    ativo: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Race',

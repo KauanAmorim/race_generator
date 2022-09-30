@@ -6,7 +6,7 @@ async function createRaceRoute() {
     const data = {
         cep_inicial: '05754070',
         cep_final: '05754070', 
-        price: 10.02 
+        preco: 10.02
     }
 
     const response = await axios.post(url, data)
@@ -57,12 +57,12 @@ describe("test PUT method /race/:id", () => {
 
         expect(race.cep_inicial).not.toBe(raceUpdated.cep_inicial)
         expect(race.cep_final).not.toBe(raceUpdated.cep_final)
-        expect(race.price).not.toBe(raceUpdated.price)
+        expect(race.price).not.toBe(raceUpdated.preco)
     })
 })
 
 describe("test DELETE method /race/:id", () => {
-    it("should create and delete a race", async () => {
+    it("should create and cancel a race", async () => {
         const createResponse = await createRaceRoute()
         const raceCreated = createResponse.data
         const id = raceCreated.id

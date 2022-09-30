@@ -10,13 +10,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       cep_inicial: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       cep_final: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      price: {
+      preco: {
+        allowNull: false,
         type: Sequelize.STRING
+      },
+      ativo: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

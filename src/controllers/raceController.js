@@ -23,7 +23,9 @@ class raceController {
 
     static async createRace(req, res) {
         try {
-            const race = await Race.create(req.body)
+            const data = req.body
+            data.ativo = 1
+            const race = await Race.create(data)
             res.status(201).send(race);            
         } catch (err) {
             res.status(500).send({message: err.message});
@@ -34,6 +36,7 @@ class raceController {
         try {
             const { id } = req.params
             const newData = req.body
+            delete newData.ativo
 
             // update
             const where = { where: { id: Number(id) } }
@@ -47,11 +50,11 @@ class raceController {
         }
     }
 
-    static async deleteRace(req, res) {
+    static async cancelRace(req, res) {
         try {
             const { id } = req.params
             const where = { where: { id: Number(id) } }
-            await Race.destroy(where)
+            await Race.update({ ativo: 0 }, where)
             res.status(204).send()
         } catch (err) {
             res.status(500).send({message: err.message});
